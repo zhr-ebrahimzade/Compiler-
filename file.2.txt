@@ -1,0 +1,20 @@
+%{
+
+#include <stdio.h>
+#include "string.h"
+
+%}
+
+%%
+[[:digit:]]+
+%%
+int main(){
+	FILE *fp ;
+	fp=fopen("test.txt" , "r") ;
+	yyin=fp ;
+	yylex() ;
+}
+
+int yywrap(){
+	return(1) ;
+}
